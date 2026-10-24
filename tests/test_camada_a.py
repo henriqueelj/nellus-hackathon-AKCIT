@@ -151,3 +151,21 @@ def test_tools_nao_levantam_excecao_sem_dados(monkeypatch, tmp_path):
     monkeypatch.setenv("NELLUS_DATA", str(tmp_path / "nao_existe.json"))
     assert tools.auditar_cadastro()["ok"] is False
     assert tools.historico_animal("BR 101")["ok"] is False
+
+
+def test_ident_003_rejected_tem_animal_id_nulo():
+    ident = next(i for i in tools.identificacoes_recentes()["identificacoes"] if i["id"] == "ident_003")
+    assert ident["animalId"] is None and ident["decisao"] == "rejected" and ident["score"] == 0.52
+    r = tools.processar_identificacao("ident_003")
+    assert r["reconhecido"] is False and r["animal"] is None
+    assert "BR 103" not in json.dumps(r, ensure_ascii=False)  # não vaza o 2º candidato
+
+
+def test_animal_id_nulo_nao_levanta_excecao(ambiente):
+    d = json.loads(ambiente.read_text())
+    d["identificacoes"].append({"id": "ident_nulo", "data": "2026-10-23T10:00:00", "animalId": None,
+                                "score": 0.9, "decisao": "accepted"})
+    ambiente.write_text(json.dumps(d))
+    r = tools.processar_identificacao("ident_nulo")
+    assert r["ok"] is False and "animal" in r["erro"]
+    assert tools.identificacoes_recentes()["total"] == 5

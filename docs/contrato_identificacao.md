@@ -41,5 +41,7 @@ leia. Neste repositório o agente lê o campo `identificacoes` de `data/rebanho.
 regras (aftosa do animal reconhecido, margem < 0.10, `rejected` = não reconhecido) sobre esse
 mock; adaptá-la ao contrato real seria trabalho futuro.
 
-Observação: no mock, `ident_003` (rejected) traz um `animalId`, enquanto o app descarta o animal
-nesse caso. A tool ignora esse campo quando a decisão é `rejected`.
+O mock usa nomes próprios (`id`, `data`) e não traz `schemaVersion`, `modelVersion` nem `margem`.
+`python scripts/validar_contrato.py --rebanho` adapta cada item (data -> timestamp, modelVersion
+do `visualId` do animal, margem = score - scoreSegundo) e o valida contra o schema. Em
+`ident_003` (rejected) o `animalId` é nulo, como no app.

@@ -68,3 +68,20 @@ def test_origem_marcada_em_todas_as_propriedades():
     assert hoje == {"animalId", "score", "decisao", "modelVersion"}
     assert proposto == {"timestamp", "usuario", "segundoCandidato", "scoreSegundo", "margem"}
     assert props["schemaVersion"]["x-origem"] == "contrato"
+
+
+def test_identificacoes_do_rebanho_validam_no_contrato():
+    from validar_contrato import identificacao_para_contrato
+    dados = json.loads((RAIZ / "data" / "rebanho.json").read_text())
+    itens = dados["identificacoes"]
+    assert len(itens) == 4
+    for item in itens:
+        doc = identificacao_para_contrato(item, dados["animals"])
+        assert validar(doc, V) == [], item["id"]
+    assert identificacao_para_contrato(itens[2], dados["animals"])["animalId"] is None
+
+
+def test_rejected_com_animal_id_e_invalido():
+    d = {"schemaVersion": "1.0", "animalId": "BR 110", "score": 0.52, "decisao": "rejected",
+         "modelVersion": "efficientnet_arcface_v1"}
+    assert validar(d, V)

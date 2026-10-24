@@ -82,7 +82,7 @@ def gerar(ref: date) -> dict:
     mock = [
         ("ident_001", "BR 121", 0.91, "accepted", "BR 118", 0.58),
         ("ident_002", "BR 105", 0.79, "review", "BR 109", 0.76),
-        ("ident_003", "BR 110", 0.52, "rejected", "BR 103", 0.49),
+        ("ident_003", None, 0.52, "rejected", "BR 103", 0.49),
         ("ident_004", "BR 103", 0.88, "accepted", "BR 111", 0.51),
     ]
     identificacoes = [
@@ -102,7 +102,7 @@ def gerar(ref: date) -> dict:
         ],
         "tasks": [], "movements": [], "events": eventos, "recognitionReports": [],
         "setupComplete": True,
-        "identificacoes": identificacoes,  # MOCK: o app não registra histórico de identificações
+        "identificacoes": identificacoes,  # MOCK: o app não registra histórico de identificações; rejected => animalId nulo
         "_aviso": "DADOS SINTETICOS. 'identificacoes' e MOCK (inexistente no app).",
     }
 

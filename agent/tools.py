@@ -317,9 +317,10 @@ def processar_identificacao(dados, identificacao_id: str) -> dict:
         return base | {"reconhecido": False, "animal": None, "alertas": [
             f"Animal NÃO reconhecido (rejected, score {ident['score']} abaixo do limiar 0.70). "
             "Não atribuir identidade; identificar por outro meio."]}
-    animal = _achar_animal(dados, ident["animalId"])
+    animal = _achar_animal(dados, ident.get("animalId") or "")
     if not animal:
-        return _erro(f"Animal '{ident['animalId']}' da identificação não existe no cadastro.")
+        return _erro(f"Identificação '{ident['id']}' (decisão {ident['decisao']}) não aponta "
+                     "um animal existente no cadastro.")
     alertas = []
     if ident["decisao"] == "review":
         alertas.append("Decisão 'review' (score entre 0.70 e 0.85): exigir revisão humana.")

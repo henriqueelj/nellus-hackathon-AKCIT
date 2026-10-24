@@ -1891,7 +1891,7 @@
     {
       "id": "ident_003",
       "data": "2026-10-21T10:00:00",
-      "animalId": "BR 110",
+      "animalId": null,
       "score": 0.52,
       "decisao": "rejected",
       "segundoCandidato": "BR 103",

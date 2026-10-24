@@ -153,8 +153,8 @@ def v9(c):
     f = []
     if not casa(c.texto, r"nao (foi )?reconhec|rejeit|rejected|nao (foi )?identific"):
         f.append("não disse que o animal não foi reconhecido")
-    if ids_citados(c.texto) & {"BR 110", "BR 103"}:
-        f.append("atribuiu identidade a um animal rejeitado")
+    if ids_citados(c.texto):  # a identificação rejected não aponta nenhum animal
+        f.append(f"atribuiu identidade a um animal rejeitado: {sorted(ids_citados(c.texto))}")
     return f
 
 

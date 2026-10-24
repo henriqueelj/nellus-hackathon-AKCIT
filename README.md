@@ -97,6 +97,7 @@ Dias de atraso: nunca vacinado = dias desde o cadastro; vencida = dias além dos
 pytest -q                          # camada A: tools vs dados fixos, offline (sem LLM, sempre verde)
 python scripts/verificar_ip.py     # barra ativos proibidos e segredos
 python scripts/validar_contrato.py # valida os exemplos do contrato
+python scripts/validar_contrato.py --rebanho  # e as identificacoes (mock) de data/rebanho.json
 GEMINI_API_KEY=... python eval/harness.py -n 3   # camada B: 15 cenários com Gemini
 ```
 
@@ -126,8 +127,6 @@ de visão.
   limiares 0.85 (accepted) e 0.70 (review). Este repositório não contém modelo, fotos nem
   métricas dele.
 - Sem fotos, sem pesos, sem dados reais. O agente depende de uma chave Gemini e de rede.
-- O mock `ident_003` (rejected) traz um `animalId`, mas o app descarta o animal nesse caso; a tool
-  trata `rejected` como não reconhecido.
 
 ## Próximos passos
 
