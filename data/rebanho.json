@@ -1,0 +1,1911 @@
+{
+  "schemaVersion": 4,
+  "user": {
+    "name": "Produtor Sintetico",
+    "email": "demo@exemplo.invalid",
+    "ranch": "Fazenda Sintetica",
+    "farms": 1
+  },
+  "animals": [
+    {
+      "id": "BR 101",
+      "name": "Sintetico 101",
+      "category": "Boi",
+      "breed": "Nelore",
+      "weightKg": 384,
+      "lot": "Lote 1",
+      "age": "Nao informado",
+      "variant": "nelore",
+      "tagTone": "primary",
+      "sisbov": "",
+      "birthDate": "Nao informada",
+      "mother": "",
+      "father": "",
+      "pregnant": false,
+      "expectedBirth": null,
+      "gain30d": 12,
+      "active": true,
+      "visualId": {
+        "captures": [
+          {
+            "angle": "front",
+            "path": "sintetico://BR-101/front",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "right",
+            "path": "sintetico://BR-101/right",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "left",
+            "path": "sintetico://BR-101/left",
+            "capturedAt": "2026-06-26T08:00:00"
+          }
+        ],
+        "createdAt": "2026-06-26T08:00:00",
+        "modelVersion": "efficientnet_arcface_v1"
+      }
+    },
+    {
+      "id": "BR 102",
+      "name": "Sintetico 102",
+      "category": "Vaca",
+      "breed": "Nelore",
+      "weightKg": 398,
+      "lot": "Lote 1",
+      "age": "Nao informado",
+      "variant": "nelore",
+      "tagTone": "primary",
+      "sisbov": "",
+      "birthDate": "Nao informada",
+      "mother": "",
+      "father": "",
+      "pregnant": false,
+      "expectedBirth": null,
+      "gain30d": 16,
+      "active": true,
+      "visualId": {
+        "captures": [
+          {
+            "angle": "front",
+            "path": "sintetico://BR-102/front",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "right",
+            "path": "sintetico://BR-102/right",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "left",
+            "path": "sintetico://BR-102/left",
+            "capturedAt": "2026-06-26T08:00:00"
+          }
+        ],
+        "createdAt": "2026-06-26T08:00:00",
+        "modelVersion": "efficientnet_arcface_v1"
+      }
+    },
+    {
+      "id": "BR 103",
+      "name": "Sintetico 103",
+      "category": "Novilha",
+      "breed": "Nelore",
+      "weightKg": 412,
+      "lot": "Lote 1",
+      "age": "Nao informado",
+      "variant": "nelore",
+      "tagTone": "primary",
+      "sisbov": "",
+      "birthDate": "Nao informada",
+      "mother": "",
+      "father": "",
+      "pregnant": false,
+      "expectedBirth": null,
+      "gain30d": 20,
+      "active": true,
+      "visualId": {
+        "captures": [
+          {
+            "angle": "front",
+            "path": "sintetico://BR-103/front",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "right",
+            "path": "sintetico://BR-103/right",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "left",
+            "path": "sintetico://BR-103/left",
+            "capturedAt": "2026-06-26T08:00:00"
+          }
+        ],
+        "createdAt": "2026-06-26T08:00:00",
+        "modelVersion": "efficientnet_arcface_v1"
+      }
+    },
+    {
+      "id": "BR 104",
+      "name": "Sintetico 104",
+      "category": "Boi",
+      "breed": "Nelore",
+      "weightKg": 426,
+      "lot": "Lote 1",
+      "age": "Nao informado",
+      "variant": "nelore",
+      "tagTone": "primary",
+      "sisbov": "",
+      "birthDate": "Nao informada",
+      "mother": "",
+      "father": "",
+      "pregnant": false,
+      "expectedBirth": null,
+      "gain30d": 24,
+      "active": true,
+      "visualId": {
+        "captures": [
+          {
+            "angle": "front",
+            "path": "sintetico://BR-104/front",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "right",
+            "path": "sintetico://BR-104/right",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "left",
+            "path": "sintetico://BR-104/left",
+            "capturedAt": "2026-06-26T08:00:00"
+          }
+        ],
+        "createdAt": "2026-06-26T08:00:00",
+        "modelVersion": "efficientnet_arcface_v1"
+      }
+    },
+    {
+      "id": "BR 105",
+      "name": "Sintetico 105",
+      "category": "Boi",
+      "breed": "Nelore",
+      "weightKg": 416,
+      "lot": "Lote 1",
+      "age": "Nao informado",
+      "variant": "nelore",
+      "tagTone": "primary",
+      "sisbov": "",
+      "birthDate": "Nao informada",
+      "mother": "",
+      "father": "",
+      "pregnant": false,
+      "expectedBirth": null,
+      "gain30d": 14,
+      "active": true,
+      "visualId": {
+        "captures": [
+          {
+            "angle": "front",
+            "path": "sintetico://BR-105/front",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "right",
+            "path": "sintetico://BR-105/right",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "left",
+            "path": "sintetico://BR-105/left",
+            "capturedAt": "2026-06-26T08:00:00"
+          }
+        ],
+        "createdAt": "2026-06-26T08:00:00",
+        "modelVersion": "efficientnet_arcface_v1"
+      }
+    },
+    {
+      "id": "BR 106",
+      "name": "Sintetico 106",
+      "category": "Vaca",
+      "breed": "Nelore",
+      "weightKg": 430,
+      "lot": "Lote 1",
+      "age": "Nao informado",
+      "variant": "nelore",
+      "tagTone": "primary",
+      "sisbov": "",
+      "birthDate": "Nao informada",
+      "mother": "",
+      "father": "",
+      "pregnant": false,
+      "expectedBirth": null,
+      "gain30d": 18,
+      "active": true,
+      "visualId": {
+        "captures": [
+          {
+            "angle": "front",
+            "path": "sintetico://BR-106/front",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "right",
+            "path": "sintetico://BR-106/right",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "left",
+            "path": "sintetico://BR-106/left",
+            "capturedAt": "2026-06-26T08:00:00"
+          }
+        ],
+        "createdAt": "2026-06-26T08:00:00",
+        "modelVersion": "efficientnet_arcface_v1"
+      }
+    },
+    {
+      "id": "BR 107",
+      "name": "Sintetico 107",
+      "category": "Novilha",
+      "breed": "Nelore",
+      "weightKg": 444,
+      "lot": "Lote 1",
+      "age": "Nao informado",
+      "variant": "nelore",
+      "tagTone": "primary",
+      "sisbov": "",
+      "birthDate": "Nao informada",
+      "mother": "",
+      "father": "",
+      "pregnant": false,
+      "expectedBirth": null,
+      "gain30d": 22,
+      "active": true,
+      "visualId": null
+    },
+    {
+      "id": "BR 108",
+      "name": "Sintetico 108",
+      "category": "Boi",
+      "breed": "Nelore",
+      "weightKg": 438,
+      "lot": "Lote 1",
+      "age": "Nao informado",
+      "variant": "nelore",
+      "tagTone": "primary",
+      "sisbov": "",
+      "birthDate": "Nao informada",
+      "mother": "",
+      "father": "",
+      "pregnant": false,
+      "expectedBirth": null,
+      "gain30d": 16,
+      "active": true,
+      "visualId": {
+        "captures": [
+          {
+            "angle": "front",
+            "path": "sintetico://BR-108/front",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "right",
+            "path": "sintetico://BR-108/right",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "left",
+            "path": "sintetico://BR-108/left",
+            "capturedAt": "2026-06-26T08:00:00"
+          }
+        ],
+        "createdAt": "2026-06-26T08:00:00",
+        "modelVersion": "efficientnet_arcface_v1"
+      }
+    },
+    {
+      "id": "BR 109",
+      "name": "Sintetico 109",
+      "category": "Boi",
+      "breed": "Nelore",
+      "weightKg": 448,
+      "lot": "Lote 2",
+      "age": "Nao informado",
+      "variant": "nelore",
+      "tagTone": "primary",
+      "sisbov": "",
+      "birthDate": "Nao informada",
+      "mother": "",
+      "father": "",
+      "pregnant": false,
+      "expectedBirth": null,
+      "gain30d": 16,
+      "active": true,
+      "visualId": {
+        "captures": [
+          {
+            "angle": "front",
+            "path": "sintetico://BR-109/front",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "right",
+            "path": "sintetico://BR-109/right",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "left",
+            "path": "sintetico://BR-109/left",
+            "capturedAt": "2026-06-26T08:00:00"
+          }
+        ],
+        "createdAt": "2026-06-26T08:00:00",
+        "modelVersion": "efficientnet_arcface_v1"
+      }
+    },
+    {
+      "id": "BR 110",
+      "name": "Sintetico 110",
+      "category": "Vaca",
+      "breed": "Nelore",
+      "weightKg": 402,
+      "lot": "Lote 2",
+      "age": "Nao informado",
+      "variant": "nelore",
+      "tagTone": "primary",
+      "sisbov": "",
+      "birthDate": "Nao informada",
+      "mother": "",
+      "father": "",
+      "pregnant": false,
+      "expectedBirth": null,
+      "gain30d": 20,
+      "active": true,
+      "visualId": {
+        "captures": [
+          {
+            "angle": "front",
+            "path": "sintetico://BR-110/front",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "right",
+            "path": "sintetico://BR-110/right",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "left",
+            "path": "sintetico://BR-110/left",
+            "capturedAt": "2026-06-26T08:00:00"
+          }
+        ],
+        "createdAt": "2026-06-26T08:00:00",
+        "modelVersion": "efficientnet_arcface_v1"
+      }
+    },
+    {
+      "id": "BR 111",
+      "name": "Sintetico 111",
+      "category": "Novilha",
+      "breed": "Nelore",
+      "weightKg": 396,
+      "lot": "Lote 2",
+      "age": "Nao informado",
+      "variant": "nelore",
+      "tagTone": "primary",
+      "sisbov": "",
+      "birthDate": "Nao informada",
+      "mother": "",
+      "father": "",
+      "pregnant": false,
+      "expectedBirth": null,
+      "gain30d": 14,
+      "active": true,
+      "visualId": {
+        "captures": [
+          {
+            "angle": "front",
+            "path": "sintetico://BR-111/front",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "right",
+            "path": "sintetico://BR-111/right",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "left",
+            "path": "sintetico://BR-111/left",
+            "capturedAt": "2026-06-26T08:00:00"
+          }
+        ],
+        "createdAt": "2026-06-26T08:00:00",
+        "modelVersion": "efficientnet_arcface_v1"
+      }
+    },
+    {
+      "id": "BR 112",
+      "name": "Sintetico 112",
+      "category": "Boi",
+      "breed": "Nelore",
+      "weightKg": 410,
+      "lot": "Lote 2",
+      "age": "Nao informado",
+      "variant": "nelore",
+      "tagTone": "primary",
+      "sisbov": "",
+      "birthDate": "Nao informada",
+      "mother": "",
+      "father": "",
+      "pregnant": false,
+      "expectedBirth": null,
+      "gain30d": 18,
+      "active": true,
+      "visualId": null
+    },
+    {
+      "id": "BR 113",
+      "name": "Sintetico 113",
+      "category": "Boi",
+      "breed": "Nelore",
+      "weightKg": 420,
+      "lot": "Lote 2",
+      "age": "Nao informado",
+      "variant": "nelore",
+      "tagTone": "primary",
+      "sisbov": "",
+      "birthDate": "Nao informada",
+      "mother": "",
+      "father": "",
+      "pregnant": false,
+      "expectedBirth": null,
+      "gain30d": 18,
+      "active": true,
+      "visualId": {
+        "captures": [
+          {
+            "angle": "front",
+            "path": "sintetico://BR-113/front",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "right",
+            "path": "sintetico://BR-113/right",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "left",
+            "path": "sintetico://BR-113/left",
+            "capturedAt": "2026-06-26T08:00:00"
+          }
+        ],
+        "createdAt": "2026-06-26T08:00:00",
+        "modelVersion": "efficientnet_arcface_v1"
+      }
+    },
+    {
+      "id": "BR 114",
+      "name": "Sintetico 114",
+      "category": "Vaca",
+      "breed": "Nelore",
+      "weightKg": 434,
+      "lot": "Lote 2",
+      "age": "Nao informado",
+      "variant": "nelore",
+      "tagTone": "primary",
+      "sisbov": "",
+      "birthDate": "Nao informada",
+      "mother": "",
+      "father": "",
+      "pregnant": false,
+      "expectedBirth": null,
+      "gain30d": 22,
+      "active": true,
+      "visualId": {
+        "captures": [
+          {
+            "angle": "front",
+            "path": "sintetico://BR-114/front",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "right",
+            "path": "sintetico://BR-114/right",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "left",
+            "path": "sintetico://BR-114/left",
+            "capturedAt": "2026-06-26T08:00:00"
+          }
+        ],
+        "createdAt": "2026-06-26T08:00:00",
+        "modelVersion": "efficientnet_arcface_v1"
+      }
+    },
+    {
+      "id": "BR 115",
+      "name": "Sintetico 115",
+      "category": "Novilha",
+      "breed": "Nelore",
+      "weightKg": 428,
+      "lot": "Lote 2",
+      "age": "Nao informado",
+      "variant": "nelore",
+      "tagTone": "primary",
+      "sisbov": "",
+      "birthDate": "Nao informada",
+      "mother": "",
+      "father": "",
+      "pregnant": false,
+      "expectedBirth": null,
+      "gain30d": 16,
+      "active": true,
+      "visualId": {
+        "captures": [
+          {
+            "angle": "front",
+            "path": "sintetico://BR-115/front",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "right",
+            "path": "sintetico://BR-115/right",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "left",
+            "path": "sintetico://BR-115/left",
+            "capturedAt": "2026-06-26T08:00:00"
+          }
+        ],
+        "createdAt": "2026-06-26T08:00:00",
+        "modelVersion": "efficientnet_arcface_v1"
+      }
+    },
+    {
+      "id": "BR 116",
+      "name": "Sintetico 116",
+      "category": "Boi",
+      "breed": "Nelore",
+      "weightKg": 442,
+      "lot": "Lote 2",
+      "age": "Nao informado",
+      "variant": "nelore",
+      "tagTone": "primary",
+      "sisbov": "",
+      "birthDate": "Nao informada",
+      "mother": "",
+      "father": "",
+      "pregnant": false,
+      "expectedBirth": null,
+      "gain30d": 20,
+      "active": true,
+      "visualId": {
+        "captures": [
+          {
+            "angle": "front",
+            "path": "sintetico://BR-116/front",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "right",
+            "path": "sintetico://BR-116/right",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "left",
+            "path": "sintetico://BR-116/left",
+            "capturedAt": "2026-06-26T08:00:00"
+          }
+        ],
+        "createdAt": "2026-06-26T08:00:00",
+        "modelVersion": "efficientnet_arcface_v1"
+      }
+    },
+    {
+      "id": "BR 117",
+      "name": "Sintetico 117",
+      "category": "Boi",
+      "breed": "Nelore",
+      "weightKg": 452,
+      "lot": "Lote 3",
+      "age": "Nao informado",
+      "variant": "nelore",
+      "tagTone": "primary",
+      "sisbov": "",
+      "birthDate": "Nao informada",
+      "mother": "",
+      "father": "",
+      "pregnant": false,
+      "expectedBirth": null,
+      "gain30d": 20,
+      "active": true,
+      "visualId": {
+        "captures": [
+          {
+            "angle": "front",
+            "path": "sintetico://BR-117/front",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "right",
+            "path": "sintetico://BR-117/right",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "left",
+            "path": "sintetico://BR-117/left",
+            "capturedAt": "2026-06-26T08:00:00"
+          }
+        ],
+        "createdAt": "2026-06-26T08:00:00",
+        "modelVersion": "efficientnet_arcface_v1"
+      }
+    },
+    {
+      "id": "BR 118",
+      "name": "Sintetico 118",
+      "category": "Vaca",
+      "breed": "Nelore",
+      "weightKg": 446,
+      "lot": "Lote 3",
+      "age": "Nao informado",
+      "variant": "nelore",
+      "tagTone": "primary",
+      "sisbov": "",
+      "birthDate": "Nao informada",
+      "mother": "",
+      "father": "",
+      "pregnant": false,
+      "expectedBirth": null,
+      "gain30d": 14,
+      "active": true,
+      "visualId": {
+        "captures": [
+          {
+            "angle": "front",
+            "path": "sintetico://BR-118/front",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "right",
+            "path": "sintetico://BR-118/right",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "left",
+            "path": "sintetico://BR-118/left",
+            "capturedAt": "2026-06-26T08:00:00"
+          }
+        ],
+        "createdAt": "2026-06-26T08:00:00",
+        "modelVersion": "efficientnet_arcface_v1"
+      }
+    },
+    {
+      "id": "BR 119",
+      "name": "Sintetico 119",
+      "category": "Novilha",
+      "breed": "Nelore",
+      "weightKg": 400,
+      "lot": "Lote 3",
+      "age": "Nao informado",
+      "variant": "nelore",
+      "tagTone": "primary",
+      "sisbov": "",
+      "birthDate": "Nao informada",
+      "mother": "",
+      "father": "",
+      "pregnant": false,
+      "expectedBirth": null,
+      "gain30d": 18,
+      "active": true,
+      "visualId": {
+        "captures": [
+          {
+            "angle": "front",
+            "path": "sintetico://BR-119/front",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "right",
+            "path": "sintetico://BR-119/right",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "left",
+            "path": "sintetico://BR-119/left",
+            "capturedAt": "2026-06-26T08:00:00"
+          }
+        ],
+        "createdAt": "2026-06-26T08:00:00",
+        "modelVersion": "efficientnet_arcface_v1"
+      }
+    },
+    {
+      "id": "BR 120",
+      "name": "Sintetico 120",
+      "category": "Boi",
+      "breed": "Nelore",
+      "weightKg": 414,
+      "lot": "Lote 3",
+      "age": "Nao informado",
+      "variant": "nelore",
+      "tagTone": "primary",
+      "sisbov": "",
+      "birthDate": "Nao informada",
+      "mother": "",
+      "father": "",
+      "pregnant": false,
+      "expectedBirth": null,
+      "gain30d": 22,
+      "active": true,
+      "visualId": null
+    },
+    {
+      "id": "BR 121",
+      "name": "Sintetico 121",
+      "category": "Boi",
+      "breed": "Nelore",
+      "weightKg": 404,
+      "lot": "Lote 3",
+      "age": "Nao informado",
+      "variant": "nelore",
+      "tagTone": "primary",
+      "sisbov": "",
+      "birthDate": "Nao informada",
+      "mother": "",
+      "father": "",
+      "pregnant": false,
+      "expectedBirth": null,
+      "gain30d": 12,
+      "active": true,
+      "visualId": {
+        "captures": [
+          {
+            "angle": "front",
+            "path": "sintetico://BR-121/front",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "right",
+            "path": "sintetico://BR-121/right",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "left",
+            "path": "sintetico://BR-121/left",
+            "capturedAt": "2026-06-26T08:00:00"
+          }
+        ],
+        "createdAt": "2026-06-26T08:00:00",
+        "modelVersion": "efficientnet_arcface_v1"
+      }
+    },
+    {
+      "id": "BR 122",
+      "name": "Sintetico 122",
+      "category": "Vaca",
+      "breed": "Nelore",
+      "weightKg": 418,
+      "lot": "Lote 3",
+      "age": "Nao informado",
+      "variant": "nelore",
+      "tagTone": "primary",
+      "sisbov": "",
+      "birthDate": "Nao informada",
+      "mother": "",
+      "father": "",
+      "pregnant": false,
+      "expectedBirth": null,
+      "gain30d": 16,
+      "active": true,
+      "visualId": {
+        "captures": [
+          {
+            "angle": "front",
+            "path": "sintetico://BR-122/front",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "right",
+            "path": "sintetico://BR-122/right",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "left",
+            "path": "sintetico://BR-122/left",
+            "capturedAt": "2026-06-26T08:00:00"
+          }
+        ],
+        "createdAt": "2026-06-26T08:00:00",
+        "modelVersion": "efficientnet_arcface_v1"
+      }
+    },
+    {
+      "id": "BR 123",
+      "name": "Sintetico 123",
+      "category": "Novilha",
+      "breed": "Nelore",
+      "weightKg": 432,
+      "lot": "Lote 3",
+      "age": "Nao informado",
+      "variant": "nelore",
+      "tagTone": "primary",
+      "sisbov": "",
+      "birthDate": "Nao informada",
+      "mother": "",
+      "father": "",
+      "pregnant": false,
+      "expectedBirth": null,
+      "gain30d": 20,
+      "active": true,
+      "visualId": {
+        "captures": [
+          {
+            "angle": "front",
+            "path": "sintetico://BR-123/front",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "right",
+            "path": "sintetico://BR-123/right",
+            "capturedAt": "2026-06-26T08:00:00"
+          },
+          {
+            "angle": "left",
+            "path": "sintetico://BR-123/left",
+            "capturedAt": "2026-06-26T08:00:00"
+          }
+        ],
+        "createdAt": "2026-06-26T08:00:00",
+        "modelVersion": "efficientnet_arcface_v1"
+      }
+    },
+    {
+      "id": "BR 124",
+      "name": "Sintetico 124",
+      "category": "Boi",
+      "breed": "Nelore",
+      "weightKg": 446,
+      "lot": "Lote 3",
+      "age": "Nao informado",
+      "variant": "nelore",
+      "tagTone": "primary",
+      "sisbov": "",
+      "birthDate": "Nao informada",
+      "mother": "",
+      "father": "",
+      "pregnant": false,
+      "expectedBirth": null,
+      "gain30d": 24,
+      "active": true,
+      "visualId": null
+    }
+  ],
+  "lots": [
+    {
+      "name": "Lote 1",
+      "hectares": 40,
+      "status": "ativo",
+      "days": 0,
+      "tone": "primary"
+    },
+    {
+      "name": "Lote 2",
+      "hectares": 0,
+      "status": "ativo",
+      "days": 0,
+      "tone": "primary"
+    },
+    {
+      "name": "Lote 3",
+      "hectares": 35,
+      "status": "ativo",
+      "days": 0,
+      "tone": "primary"
+    }
+  ],
+  "tasks": [],
+  "movements": [],
+  "events": [
+    {
+      "id": "event-0001",
+      "animalId": "BR 101",
+      "kind": "registration",
+      "title": "Animal cadastrado",
+      "detail": "Entrada no Lote 1 com ID visual",
+      "date": "2026-06-26T08:00:00"
+    },
+    {
+      "id": "event-0002",
+      "animalId": "BR 101",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "360 kg",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0003",
+      "animalId": "BR 101",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "372 kg",
+      "date": "2026-09-24T08:00:00"
+    },
+    {
+      "id": "event-0004",
+      "animalId": "BR 101",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "384 kg",
+      "date": "2026-10-21T08:00:00"
+    },
+    {
+      "id": "event-0005",
+      "animalId": "BR 101",
+      "kind": "vaccine",
+      "title": "Manejo sanitario registrado",
+      "detail": "Aftosa - dose 2 ml",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0006",
+      "animalId": "BR 102",
+      "kind": "registration",
+      "title": "Animal cadastrado",
+      "detail": "Entrada no Lote 1 com ID visual",
+      "date": "2026-06-26T08:00:00"
+    },
+    {
+      "id": "event-0007",
+      "animalId": "BR 102",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "367 kg",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0008",
+      "animalId": "BR 102",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "382 kg",
+      "date": "2026-09-24T08:00:00"
+    },
+    {
+      "id": "event-0009",
+      "animalId": "BR 102",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "398 kg",
+      "date": "2026-10-21T08:00:00"
+    },
+    {
+      "id": "event-0010",
+      "animalId": "BR 102",
+      "kind": "vaccine",
+      "title": "Manejo sanitario registrado",
+      "detail": "Aftosa - dose 2 ml",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0011",
+      "animalId": "BR 103",
+      "kind": "registration",
+      "title": "Animal cadastrado",
+      "detail": "Entrada no Lote 1 com ID visual",
+      "date": "2026-06-26T08:00:00"
+    },
+    {
+      "id": "event-0012",
+      "animalId": "BR 103",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "374 kg",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0013",
+      "animalId": "BR 103",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "392 kg",
+      "date": "2026-09-24T08:00:00"
+    },
+    {
+      "id": "event-0014",
+      "animalId": "BR 103",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "412 kg",
+      "date": "2026-10-21T08:00:00"
+    },
+    {
+      "id": "event-0015",
+      "animalId": "BR 103",
+      "kind": "vaccine",
+      "title": "Manejo sanitario registrado",
+      "detail": "Aftosa - dose 2 ml",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0016",
+      "animalId": "BR 104",
+      "kind": "registration",
+      "title": "Animal cadastrado",
+      "detail": "Entrada no Lote 1 com ID visual",
+      "date": "2026-06-26T08:00:00"
+    },
+    {
+      "id": "event-0017",
+      "animalId": "BR 104",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "381 kg",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0018",
+      "animalId": "BR 104",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "402 kg",
+      "date": "2026-09-24T08:00:00"
+    },
+    {
+      "id": "event-0019",
+      "animalId": "BR 104",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "426 kg",
+      "date": "2026-10-21T08:00:00"
+    },
+    {
+      "id": "event-0020",
+      "animalId": "BR 104",
+      "kind": "vaccine",
+      "title": "Manejo sanitario registrado",
+      "detail": "Aftosa - dose 2 ml",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0021",
+      "animalId": "BR 105",
+      "kind": "registration",
+      "title": "Animal cadastrado",
+      "detail": "Entrada no Lote 1 com ID visual",
+      "date": "2026-06-26T08:00:00"
+    },
+    {
+      "id": "event-0022",
+      "animalId": "BR 105",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "388 kg",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0023",
+      "animalId": "BR 105",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "402 kg",
+      "date": "2026-09-24T08:00:00"
+    },
+    {
+      "id": "event-0024",
+      "animalId": "BR 105",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "416 kg",
+      "date": "2026-10-21T08:00:00"
+    },
+    {
+      "id": "event-0025",
+      "animalId": "BR 105",
+      "kind": "vaccine",
+      "title": "Manejo sanitario registrado",
+      "detail": "Aftosa - dose 2 ml",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0026",
+      "animalId": "BR 106",
+      "kind": "registration",
+      "title": "Animal cadastrado",
+      "detail": "Entrada no Lote 1 com ID visual",
+      "date": "2026-06-26T08:00:00"
+    },
+    {
+      "id": "event-0027",
+      "animalId": "BR 106",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "395 kg",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0028",
+      "animalId": "BR 106",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "412 kg",
+      "date": "2026-09-24T08:00:00"
+    },
+    {
+      "id": "event-0029",
+      "animalId": "BR 106",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "430 kg",
+      "date": "2026-10-21T08:00:00"
+    },
+    {
+      "id": "event-0030",
+      "animalId": "BR 106",
+      "kind": "vaccine",
+      "title": "Manejo sanitario registrado",
+      "detail": "Aftosa - dose 2 ml",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0031",
+      "animalId": "BR 107",
+      "kind": "registration",
+      "title": "Animal cadastrado",
+      "detail": "Entrada no Lote 1",
+      "date": "2026-06-26T08:00:00"
+    },
+    {
+      "id": "event-0032",
+      "animalId": "BR 107",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "402 kg",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0033",
+      "animalId": "BR 107",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "422 kg",
+      "date": "2026-09-24T08:00:00"
+    },
+    {
+      "id": "event-0034",
+      "animalId": "BR 107",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "444 kg",
+      "date": "2026-10-21T08:00:00"
+    },
+    {
+      "id": "event-0035",
+      "animalId": "BR 107",
+      "kind": "vaccine",
+      "title": "Manejo sanitario registrado",
+      "detail": "Aftosa - dose 2 ml",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0036",
+      "animalId": "BR 108",
+      "kind": "registration",
+      "title": "Animal cadastrado",
+      "detail": "Entrada no Lote 1 com ID visual",
+      "date": "2026-06-26T08:00:00"
+    },
+    {
+      "id": "event-0037",
+      "animalId": "BR 108",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "409 kg",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0038",
+      "animalId": "BR 108",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "422 kg",
+      "date": "2026-09-24T08:00:00"
+    },
+    {
+      "id": "event-0039",
+      "animalId": "BR 108",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "438 kg",
+      "date": "2026-10-21T08:00:00"
+    },
+    {
+      "id": "event-0040",
+      "animalId": "BR 108",
+      "kind": "vaccine",
+      "title": "Manejo sanitario registrado",
+      "detail": "Aftosa - dose 2 ml",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0041",
+      "animalId": "BR 109",
+      "kind": "registration",
+      "title": "Animal cadastrado",
+      "detail": "Entrada no Lote 2 com ID visual",
+      "date": "2026-06-26T08:00:00"
+    },
+    {
+      "id": "event-0042",
+      "animalId": "BR 109",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "416 kg",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0043",
+      "animalId": "BR 109",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "432 kg",
+      "date": "2026-09-24T08:00:00"
+    },
+    {
+      "id": "event-0044",
+      "animalId": "BR 109",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "448 kg",
+      "date": "2026-10-21T08:00:00"
+    },
+    {
+      "id": "event-0045",
+      "animalId": "BR 109",
+      "kind": "vaccine",
+      "title": "Manejo sanitario registrado",
+      "detail": "Aftosa - dose 2 ml",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0046",
+      "animalId": "BR 110",
+      "kind": "registration",
+      "title": "Animal cadastrado",
+      "detail": "Entrada no Lote 1 com ID visual",
+      "date": "2026-06-26T08:00:00"
+    },
+    {
+      "id": "event-0047",
+      "animalId": "BR 110",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "363 kg",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0048",
+      "animalId": "BR 110",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "382 kg",
+      "date": "2026-09-24T08:00:00"
+    },
+    {
+      "id": "event-0049",
+      "animalId": "BR 110",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "402 kg",
+      "date": "2026-10-21T08:00:00"
+    },
+    {
+      "id": "event-0050",
+      "animalId": "BR 110",
+      "kind": "vaccine",
+      "title": "Manejo sanitario registrado",
+      "detail": "Aftosa - dose 2 ml",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0051",
+      "animalId": "BR 110",
+      "kind": "transfer",
+      "title": "Transferencia registrada",
+      "detail": "De Lote 1 para Lote 2",
+      "date": "2026-10-04T08:00:00"
+    },
+    {
+      "id": "event-0052",
+      "animalId": "BR 111",
+      "kind": "registration",
+      "title": "Animal cadastrado",
+      "detail": "Entrada no Lote 2 com ID visual",
+      "date": "2026-06-26T08:00:00"
+    },
+    {
+      "id": "event-0053",
+      "animalId": "BR 111",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "370 kg",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0054",
+      "animalId": "BR 111",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "382 kg",
+      "date": "2026-09-24T08:00:00"
+    },
+    {
+      "id": "event-0055",
+      "animalId": "BR 111",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "396 kg",
+      "date": "2026-10-21T08:00:00"
+    },
+    {
+      "id": "event-0056",
+      "animalId": "BR 111",
+      "kind": "vaccine",
+      "title": "Manejo sanitario registrado",
+      "detail": "Aftosa - dose 2 ml",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0057",
+      "animalId": "BR 112",
+      "kind": "registration",
+      "title": "Animal cadastrado",
+      "detail": "Entrada no Lote 2",
+      "date": "2026-06-26T08:00:00"
+    },
+    {
+      "id": "event-0058",
+      "animalId": "BR 112",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "377 kg",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0059",
+      "animalId": "BR 112",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "392 kg",
+      "date": "2026-09-24T08:00:00"
+    },
+    {
+      "id": "event-0060",
+      "animalId": "BR 112",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "410 kg",
+      "date": "2026-10-21T08:00:00"
+    },
+    {
+      "id": "event-0061",
+      "animalId": "BR 112",
+      "kind": "vaccine",
+      "title": "Manejo sanitario registrado",
+      "detail": "Aftosa - dose 2 ml",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0062",
+      "animalId": "BR 113",
+      "kind": "registration",
+      "title": "Animal cadastrado",
+      "detail": "Entrada no Lote 2 com ID visual",
+      "date": "2026-06-26T08:00:00"
+    },
+    {
+      "id": "event-0063",
+      "animalId": "BR 113",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "384 kg",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0064",
+      "animalId": "BR 113",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "402 kg",
+      "date": "2026-09-24T08:00:00"
+    },
+    {
+      "id": "event-0065",
+      "animalId": "BR 113",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "420 kg",
+      "date": "2026-10-21T08:00:00"
+    },
+    {
+      "id": "event-0066",
+      "animalId": "BR 113",
+      "kind": "vaccine",
+      "title": "Manejo sanitario registrado",
+      "detail": "Aftosa - dose 2 ml",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0067",
+      "animalId": "BR 114",
+      "kind": "registration",
+      "title": "Animal cadastrado",
+      "detail": "Entrada no Lote 2 com ID visual",
+      "date": "2026-06-26T08:00:00"
+    },
+    {
+      "id": "event-0068",
+      "animalId": "BR 114",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "391 kg",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0069",
+      "animalId": "BR 114",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "412 kg",
+      "date": "2026-09-24T08:00:00"
+    },
+    {
+      "id": "event-0070",
+      "animalId": "BR 114",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "434 kg",
+      "date": "2026-10-21T08:00:00"
+    },
+    {
+      "id": "event-0071",
+      "animalId": "BR 114",
+      "kind": "vaccine",
+      "title": "Manejo sanitario registrado",
+      "detail": "Aftosa - dose 2 ml",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0072",
+      "animalId": "BR 115",
+      "kind": "registration",
+      "title": "Animal cadastrado",
+      "detail": "Entrada no Lote 2 com ID visual",
+      "date": "2026-06-26T08:00:00"
+    },
+    {
+      "id": "event-0073",
+      "animalId": "BR 115",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "398 kg",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0074",
+      "animalId": "BR 115",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "412 kg",
+      "date": "2026-09-24T08:00:00"
+    },
+    {
+      "id": "event-0075",
+      "animalId": "BR 115",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "428 kg",
+      "date": "2026-10-21T08:00:00"
+    },
+    {
+      "id": "event-0076",
+      "animalId": "BR 115",
+      "kind": "vaccine",
+      "title": "Manejo sanitario registrado",
+      "detail": "Aftosa - dose 2 ml",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0077",
+      "animalId": "BR 116",
+      "kind": "registration",
+      "title": "Animal cadastrado",
+      "detail": "Entrada no Lote 2 com ID visual",
+      "date": "2026-06-26T08:00:00"
+    },
+    {
+      "id": "event-0078",
+      "animalId": "BR 116",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "405 kg",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0079",
+      "animalId": "BR 116",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "422 kg",
+      "date": "2026-09-24T08:00:00"
+    },
+    {
+      "id": "event-0080",
+      "animalId": "BR 116",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "442 kg",
+      "date": "2026-10-21T08:00:00"
+    },
+    {
+      "id": "event-0081",
+      "animalId": "BR 116",
+      "kind": "vaccine",
+      "title": "Manejo sanitario registrado",
+      "detail": "Aftosa - dose 2 ml",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0082",
+      "animalId": "BR 117",
+      "kind": "registration",
+      "title": "Animal cadastrado",
+      "detail": "Entrada no Lote 3 com ID visual",
+      "date": "2026-06-26T08:00:00"
+    },
+    {
+      "id": "event-0083",
+      "animalId": "BR 117",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "412 kg",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0084",
+      "animalId": "BR 117",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "432 kg",
+      "date": "2026-09-24T08:00:00"
+    },
+    {
+      "id": "event-0085",
+      "animalId": "BR 117",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "452 kg",
+      "date": "2026-10-21T08:00:00"
+    },
+    {
+      "id": "event-0086",
+      "animalId": "BR 117",
+      "kind": "vaccine",
+      "title": "Manejo sanitario registrado",
+      "detail": "Aftosa - dose 2 ml",
+      "date": "2026-09-09T08:00:00"
+    },
+    {
+      "id": "event-0087",
+      "animalId": "BR 118",
+      "kind": "registration",
+      "title": "Animal cadastrado",
+      "detail": "Entrada no Lote 3 com ID visual",
+      "date": "2026-06-26T08:00:00"
+    },
+    {
+      "id": "event-0088",
+      "animalId": "BR 118",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "419 kg",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0089",
+      "animalId": "BR 118",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "432 kg",
+      "date": "2026-09-24T08:00:00"
+    },
+    {
+      "id": "event-0090",
+      "animalId": "BR 118",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "446 kg",
+      "date": "2026-10-21T08:00:00"
+    },
+    {
+      "id": "event-0091",
+      "animalId": "BR 118",
+      "kind": "vaccine",
+      "title": "Manejo sanitario registrado",
+      "detail": "Aftosa - dose 2 ml",
+      "date": "2026-09-09T08:00:00"
+    },
+    {
+      "id": "event-0092",
+      "animalId": "BR 119",
+      "kind": "registration",
+      "title": "Animal cadastrado",
+      "detail": "Entrada no Lote 3 com ID visual",
+      "date": "2026-06-26T08:00:00"
+    },
+    {
+      "id": "event-0093",
+      "animalId": "BR 119",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "366 kg",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0094",
+      "animalId": "BR 119",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "382 kg",
+      "date": "2026-09-24T08:00:00"
+    },
+    {
+      "id": "event-0095",
+      "animalId": "BR 119",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "400 kg",
+      "date": "2026-10-21T08:00:00"
+    },
+    {
+      "id": "event-0096",
+      "animalId": "BR 119",
+      "kind": "vaccine",
+      "title": "Manejo sanitario registrado",
+      "detail": "Aftosa - dose 2 ml",
+      "date": "2026-09-09T08:00:00"
+    },
+    {
+      "id": "event-0097",
+      "animalId": "BR 120",
+      "kind": "registration",
+      "title": "Animal cadastrado",
+      "detail": "Entrada no Lote 3",
+      "date": "2026-06-26T08:00:00"
+    },
+    {
+      "id": "event-0098",
+      "animalId": "BR 120",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "373 kg",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0099",
+      "animalId": "BR 120",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "392 kg",
+      "date": "2026-09-24T08:00:00"
+    },
+    {
+      "id": "event-0100",
+      "animalId": "BR 120",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "414 kg",
+      "date": "2026-10-21T08:00:00"
+    },
+    {
+      "id": "event-0101",
+      "animalId": "BR 120",
+      "kind": "vaccine",
+      "title": "Manejo sanitario registrado",
+      "detail": "Aftosa - dose 2 ml",
+      "date": "2026-03-28T08:00:00"
+    },
+    {
+      "id": "event-0102",
+      "animalId": "BR 121",
+      "kind": "registration",
+      "title": "Animal cadastrado",
+      "detail": "Entrada no Lote 3 com ID visual",
+      "date": "2026-06-26T08:00:00"
+    },
+    {
+      "id": "event-0103",
+      "animalId": "BR 121",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "380 kg",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0104",
+      "animalId": "BR 121",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "392 kg",
+      "date": "2026-09-24T08:00:00"
+    },
+    {
+      "id": "event-0105",
+      "animalId": "BR 121",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "404 kg",
+      "date": "2026-10-21T08:00:00"
+    },
+    {
+      "id": "event-0106",
+      "animalId": "BR 121",
+      "kind": "vaccine",
+      "title": "Manejo sanitario registrado",
+      "detail": "Aftosa - dose 2 ml",
+      "date": "2026-03-28T08:00:00"
+    },
+    {
+      "id": "event-0107",
+      "animalId": "BR 122",
+      "kind": "registration",
+      "title": "Animal cadastrado",
+      "detail": "Entrada no Lote 3 com ID visual",
+      "date": "2026-06-26T08:00:00"
+    },
+    {
+      "id": "event-0108",
+      "animalId": "BR 122",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "387 kg",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0109",
+      "animalId": "BR 122",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "402 kg",
+      "date": "2026-09-24T08:00:00"
+    },
+    {
+      "id": "event-0110",
+      "animalId": "BR 122",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "418 kg",
+      "date": "2026-10-21T08:00:00"
+    },
+    {
+      "id": "event-0111",
+      "animalId": "BR 122",
+      "kind": "vaccine",
+      "title": "Manejo sanitario registrado",
+      "detail": "Aftosa - dose 2 ml",
+      "date": "2026-03-28T08:00:00"
+    },
+    {
+      "id": "event-0112",
+      "animalId": "BR 123",
+      "kind": "registration",
+      "title": "Animal cadastrado",
+      "detail": "Entrada no Lote 3 com ID visual",
+      "date": "2026-06-26T08:00:00"
+    },
+    {
+      "id": "event-0113",
+      "animalId": "BR 123",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "394 kg",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0114",
+      "animalId": "BR 123",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "412 kg",
+      "date": "2026-09-24T08:00:00"
+    },
+    {
+      "id": "event-0115",
+      "animalId": "BR 123",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "432 kg",
+      "date": "2026-10-21T08:00:00"
+    },
+    {
+      "id": "event-0116",
+      "animalId": "BR 124",
+      "kind": "registration",
+      "title": "Animal cadastrado",
+      "detail": "Entrada no Lote 3",
+      "date": "2026-06-26T08:00:00"
+    },
+    {
+      "id": "event-0117",
+      "animalId": "BR 124",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "401 kg",
+      "date": "2026-08-25T08:00:00"
+    },
+    {
+      "id": "event-0118",
+      "animalId": "BR 124",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "422 kg",
+      "date": "2026-09-24T08:00:00"
+    },
+    {
+      "id": "event-0119",
+      "animalId": "BR 124",
+      "kind": "weight",
+      "title": "Pesagem registrada",
+      "detail": "446 kg",
+      "date": "2026-10-21T08:00:00"
+    }
+  ],
+  "recognitionReports": [],
+  "setupComplete": true,
+  "identificacoes": [
+    {
+      "id": "ident_001",
+      "data": "2026-10-23T10:00:00",
+      "animalId": "BR 121",
+      "score": 0.91,
+      "decisao": "accepted",
+      "segundoCandidato": "BR 118",
+      "scoreSegundo": 0.58
+    },
+    {
+      "id": "ident_002",
+      "data": "2026-10-22T10:00:00",
+      "animalId": "BR 105",
+      "score": 0.79,
+      "decisao": "review",
+      "segundoCandidato": "BR 109",
+      "scoreSegundo": 0.76
+    },
+    {
+      "id": "ident_003",
+      "data": "2026-10-21T10:00:00",
+      "animalId": "BR 110",
+      "score": 0.52,
+      "decisao": "rejected",
+      "segundoCandidato": "BR 103",
+      "scoreSegundo": 0.49
+    },
+    {
+      "id": "ident_004",
+      "data": "2026-10-20T10:00:00",
+      "animalId": "BR 103",
+      "score": 0.88,
+      "decisao": "accepted",
+      "segundoCandidato": "BR 111",
+      "scoreSegundo": 0.51
+    }
+  ],
+  "_aviso": "DADOS SINTETICOS. 'identificacoes' e MOCK (inexistente no app)."
+}
