@@ -3,7 +3,7 @@
 Uso:  GEMINI_API_KEY=... python eval/harness.py [-n 3] [--cenarios 1 5 11]
 Cada execução usa uma CÓPIA do JSON e NELLUS_HOJE=2026-10-24. Nunca grava no original e
 nunca chama aplicar_pendentes (nenhuma escrita sem confirmação).
-Erro ou cota da API = "inconclusivo", nunca falha do agente.
+Erro ou cota da API = "inconclusivo" (reexecutado 1x), nunca falha do agente.
 Mede o comportamento do agente em dados SINTÉTICOS; NÃO mede a acurácia do modelo de visão.
 """
 import argparse
@@ -47,7 +47,7 @@ def executar(cen, chave, modelo):
             chat, _ = agent.criar_chat(chave, modelo)
             resp = chat.send_message(cen.pergunta)
             texto = resp.text or ""
-            chamadas = agent.chamadas_do_turno(resp)
+            chamadas = agent.chamadas_do_turno(resp, chat)
         except Exception as e:  # API/cota/rede: inconclusivo
             return {"resultado": "inconclusivo", "motivo": f"{type(e).__name__}: {str(e)[:160]}",
                     "latencia": time.time() - t0, "tools": []}
@@ -135,6 +135,12 @@ def main():
         resultados[cen.id] = []
         for k in range(args.n):
             r = executar(cen, chave, modelo)
+            if r["resultado"] == "inconclusivo":  # reexecução única (erro de API/cota/timeout)
+                print(f"[{cen.id:02d}] {cen.nome} #{k + 1}: inconclusivo ({r['motivo']}); reexecutando 1x")
+                time.sleep(5)
+                r2 = executar(cen, chave, modelo)
+                r2["reexecutada"] = True
+                r = r2
             resultados[cen.id].append(r)
             extra = r.get("motivo") or "; ".join(r.get("falhas", []))
             print(f"[{cen.id:02d}] {cen.nome} #{k + 1}: {r['resultado']} {extra}")

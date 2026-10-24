@@ -44,13 +44,16 @@ def criar_chat(chave: str, modelo: str | None = None):
     client = genai.Client(api_key=chave)
     chat = client.chats.create(model=modelo, config=types.GenerateContentConfig(
         system_instruction=PROMPT_SISTEMA, tools=tools.FERRAMENTAS_LLM, temperature=0.2))
+    chat._client_ref = client  # sem isto o client é coletado e fechado ao sair da função
     return chat, modelo
 
 
-def chamadas_do_turno(resposta) -> list[tuple[str, dict]]:
-    """Tools chamadas neste turno, lidas de automatic_function_calling_history
-    (só o que vem depois da última mensagem de texto do usuário)."""
+def chamadas_do_turno(resposta, chat=None) -> list[tuple[str, dict]]:
+    """Tools chamadas neste turno (só o que vem depois da última mensagem de texto do usuário).
+    Lê automatic_function_calling_history; se vier vazio (google-genai 2.x), usa o histórico do chat."""
     hist = list(getattr(resposta, "automatic_function_calling_history", None) or [])
+    if not hist and chat is not None:
+        hist = list(chat.get_history(curated=False))
     inicio = 0
     for i, c in enumerate(hist):
         if c.role == "user" and any(getattr(p, "text", None) for p in (c.parts or [])):
@@ -65,7 +68,7 @@ def chamadas_do_turno(resposta) -> list[tuple[str, dict]]:
 
 def _enviar(chat, texto: str):
     resposta = chat.send_message(texto)
-    for nome, args in chamadas_do_turno(resposta):
+    for nome, args in chamadas_do_turno(resposta, chat):
         print(f"  [tool] {nome}({', '.join(f'{k}={v!r}' for k, v in args.items())})")
     print(f"\nAgente: {resposta.text or '(sem texto)'}\n")
     return resposta
