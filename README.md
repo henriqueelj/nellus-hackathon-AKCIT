@@ -116,6 +116,14 @@ de visão.
 (`animalId`, `score`, `decisao`, `modelVersion`) do que é **proposto e não existe** (`timestamp`,
 `usuario`, `segundoCandidato`, `scoreSegundo`, `margem`).
 
+## Protótipo da tela do assistente
+
+[prototipo/](prototipo/) tem uma tela de celular (HTML + servidor local, só biblioteca padrão)
+que conversa com o agente real (Gemini) sobre os dados sintéticos, com propostas que o usuário
+confirma ou descarta. **O app Flutter não tem esta tela nem a integração com o agente**: ela mostra
+como a experiência ficaria. Os dados são sintéticos e a identificação é mock. Veja
+[prototipo/README.md](prototipo/README.md).
+
 ## Limitações e o que é sintético
 
 - Todos os dados são sintéticos: 24 animais (BR 101 a BR 124), 3 lotes, eventos gerados por fórmula.

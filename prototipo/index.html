@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Assistente Nellus (protótipo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--verde:#1C391D;--texto:#1A1A1A;--fundo:#F4F4F2;--cartao:#FFFFFF;--apoio:#E4EBE4;
+  --suave:#4A5A4B;--borda:#CFD8CF;--erro:#8A2A1E;--aviso:#F6E6BE}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{font-family:Poppins,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--texto);
+  background:#DDE3DD;display:flex;justify-content:center;align-items:center}
+.app{width:100%;max-width:430px;height:100%;background:var(--fundo);display:flex;flex-direction:column;overflow:hidden}
+@media(min-width:520px){.app{height:min(880px,calc(100vh - 32px));border-radius:32px;
+  box-shadow:0 12px 40px rgba(28,57,29,.25);border:1px solid var(--borda)}}
+button,input{font:inherit}
+:focus-visible{outline:3px solid #2B7A33;outline-offset:2px}
+header{display:flex;align-items:center;gap:10px;padding:14px 16px 8px}
+header .tit{flex:1;min-width:0}
+h1{font-size:19px;line-height:1.2;margin:0;font-weight:600;color:var(--verde)}
+.sub{margin:2px 0 0;font-size:12px;color:var(--suave)}
+.btn-reiniciar{min-height:44px;padding:0 14px;border-radius:12px;border:1px solid var(--verde);
+  background:var(--cartao);color:var(--verde);font-weight:500;font-size:13px;cursor:pointer}
+.aviso{margin:0 16px 8px;padding:8px 12px;border-radius:12px;background:var(--aviso);
+  color:#4A3600;font-size:12px;font-weight:500;line-height:1.35}
+#conversa{flex:1;overflow-y:auto;padding:4px 16px 12px;display:flex;flex-direction:column;gap:10px}
+.balao{max-width:88%;padding:10px 14px;border-radius:18px;font-size:14px;line-height:1.45;overflow-wrap:anywhere}
+.balao p{margin:0 0 8px}.balao p:last-child{margin-bottom:0}
+.balao ul{margin:0 0 8px;padding-left:20px}.balao ul:last-child{margin-bottom:0}
+.balao code{background:var(--apoio);padding:1px 5px;border-radius:6px;font-size:13px}
+.usuario{align-self:flex-end;background:var(--verde);color:#fff;border-bottom-right-radius:6px}
+.usuario code{background:rgba(255,255,255,.2);color:#fff}
+.agente{align-self:flex-start;background:var(--cartao);border:1px solid var(--borda);border-bottom-left-radius:6px}
+.erro{align-self:flex-start;background:#FBEDEA;border:1px solid #E3B8B0;color:var(--erro);font-size:13px}
+.pilulas{align-self:flex-start;display:flex;flex-wrap:wrap;gap:6px;margin-top:-4px}
+.pilula{background:var(--apoio);color:var(--verde);border-radius:999px;padding:3px 10px;font-size:11.5px;
+  font-weight:500;max-width:100%;overflow-wrap:anywhere}
+.cartao{background:var(--cartao);border:1px solid var(--borda);border-radius:16px;padding:12px 14px;align-self:stretch}
+.evento{background:var(--apoio);border-color:var(--verde)}
+.evento .t{font-size:12px;color:var(--suave);font-weight:500;margin:0}
+.evento .v{font-size:15px;font-weight:600;color:var(--verde);margin:2px 0 0}
+.proposta .t{font-size:12px;font-weight:600;color:var(--verde);margin:0 0 6px}
+.proposta ul{margin:0 0 10px;padding-left:18px;font-size:13.5px}
+.acoes{display:flex;gap:8px}
+.acoes button{flex:1;min-height:44px;border-radius:12px;font-weight:600;font-size:14px;cursor:pointer}
+.confirmar{background:var(--verde);color:#fff;border:1px solid var(--verde)}
+.descartar{background:var(--cartao);color:var(--verde);border:1px solid var(--verde)}
+.status{font-size:13px;font-weight:500;margin:0}
+.digitando{align-self:flex-start;font-size:13px;color:var(--suave);font-style:italic;padding:6px 4px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:6px 16px 8px;flex:none}
+.chip{flex:none;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid var(--verde);
+  background:var(--apoio);color:var(--verde);font-size:13px;font-weight:500;cursor:pointer;white-space:nowrap}
+.compor{display:flex;gap:8px;padding:4px 16px 10px;flex:none}
+.compor input{flex:1;min-width:0;min-height:48px;border-radius:14px;border:1px solid var(--borda);
+  background:var(--cartao);padding:0 14px;font-size:14px;color:var(--texto)}
+.compor input::placeholder{color:#5E6B5F}
+.enviar{width:48px;min-height:48px;border-radius:14px;border:0;background:var(--verde);color:#fff;
+  cursor:pointer;display:flex;align-items:center;justify-content:center}
+button:disabled,input:disabled{opacity:.55;cursor:not-allowed}
+nav{display:flex;justify-content:space-around;align-items:center;background:var(--cartao);
+  border-top:1px solid var(--borda);padding:6px 8px 10px;flex:none}
+nav .it{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;color:var(--suave);min-width:56px}
+nav .it.ativo{color:var(--verde);font-weight:600}
+nav .cam{width:52px;height:52px;border-radius:50%;background:var(--verde);color:#fff;display:flex;
+  align-items:center;justify-content:center;margin-top:-18px;box-shadow:0 4px 10px rgba(28,57,29,.35)}
+svg{display:block}
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <div class="tit">
+      <h1>Assistente Nellus</h1>
+      <p class="sub" id="sub">Protótipo · … · dados sintéticos</p>
+    </div>
+    <button class="btn-reiniciar" id="reiniciar" type="button" aria-label="Reiniciar a conversa">Reiniciar</button>
+  </header>
+  <p class="aviso">Agente real (LLM) · dados sintéticos · o app ainda não está integrado</p>
+  <main id="conversa" role="log" aria-live="polite" aria-label="Conversa com o assistente"></main>
+  <div class="chips" id="chips" aria-label="Sugestões"></div>
+  <form class="compor" id="form">
+    <label for="texto" style="position:absolute;left:-9999px">Pergunte sobre o rebanho</label>
+    <input id="texto" type="text" autocomplete="off" placeholder="Pergunte sobre o rebanho">
+    <button class="enviar" id="enviar" type="submit" aria-label="Enviar mensagem">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5v-6.8l9-1.7-9-1.7V3.5L22 12 3 20.5z"/></svg>
+    </button>
+  </form>
+  <nav aria-hidden="true">
+    <span class="it"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8v10H3z"/></svg>Início</span>
+    <span class="it"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-4 3-6 7-6s7 2 7 6"/><circle cx="17.5" cy="9" r="2.5"/></svg>Rebanho</span>
+    <span class="cam"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h3l2-3h6l2 3h3v13H4z"/><circle cx="12" cy="13" r="3.5"/></svg></span>
+    <span class="it"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Agenda</span>
+    <span class="it ativo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 7h16M4 12h16M4 17h16"/></svg>Mais</span>
+  </nav>
+</div>
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const conversa = $("conversa"), campo = $("texto");
+const SUGESTOES = [
+  ["Quais animais do Lote 3 estão sem aftosa?", "msg"],
+  ["Tem algo errado no meu cadastro?", "msg"],
+  ["Pesei o BR 123 com 440 kg", "msg"],
+  ["Monta o dossiê do BR 121", "msg"],
+  ["Nova identificação (ident_002)", "ident_002"]
+];
+const DECISAO = {accepted: "Reconhecido", review: "Revisar", rejected: "Não reconhecido"};
+let ocupado = false;
+
+function esc(s){return String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function inline(s){ // s já escapado
+  return s.split(/(`[^`]+`)/).map((p, i) => i % 2
+    ? "<code>" + p.slice(1, -1) + "</code>"
+    : p.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")).join("");
+}
+function markdown(texto){ // escapa HTML ANTES de qualquer marcação
+  const linhas = esc(texto).split("\n"); let html = "", lista = false, par = [];
+  const fechaPar = () => { if (par.length) { html += "<p>" + par.map(inline).join("<br>") + "</p>"; par = []; } };
+  const fechaLista = () => { if (lista) { html += "</ul>"; lista = false; } };
+  for (const l of linhas) {
+    const m = l.match(/^\s*[-*]\s+(.*)$/);
+    if (m) { fechaPar(); if (!lista) { html += "<ul>"; lista = true; } html += "<li>" + inline(m[1]) + "</li>"; }
+    else if (!l.trim()) { fechaPar(); fechaLista(); }
+    else { fechaLista(); par.push(l.trim()); }
+  }
+  fechaPar(); fechaLista(); return html;
+}
+function el(tag, cls, texto){const e = document.createElement(tag); if (cls) e.className = cls; if (texto != null) e.textContent = texto; return e;}
+function rolar(){conversa.scrollTop = conversa.scrollHeight;}
+function bloquear(b){
+  ocupado = b;
+  document.querySelectorAll("button, #texto").forEach(e => { e.disabled = b; });
+  conversa.setAttribute("aria-busy", b ? "true" : "false");
+}
+function balao(tipo, texto, md){
+  const b = el("div", "balao " + tipo);
+  if (md) b.innerHTML = markdown(texto); else b.textContent = texto;
+  conversa.append(b); rolar(); return b;
+}
+function resumoArgs(args){
+  const s = Object.entries(args || {}).map(([k, v]) => k + "=" + JSON.stringify(v)).join(", ");
+  return s.length > 60 ? s.slice(0, 57) + "…" : s;
+}
+function cartaoEvento(ev){
+  const c = el("div", "cartao evento");
+  c.append(el("p", "t", "Nova identificação · agora"));
+  const score = String(ev.score).replace(".", ",");
+  const v = ev.animalId ? ev.animalId + " · " + (DECISAO[ev.decisao] || ev.decisao) + " · score " + score
+                        : "Animal não reconhecido · score " + score;
+  c.append(el("p", "v", v));
+  conversa.append(c); rolar();
+}
+function cartaoProposta(linhas){
+  const c = el("div", "cartao proposta");
+  c.append(el("p", "t", "Proposta do agente · nada é gravado até você confirmar"));
+  const ul = el("ul"); linhas.forEach(l => ul.append(el("li", null, l))); c.append(ul);
+  const acoes = el("div", "acoes");
+  const ok = el("button", "confirmar", "Confirmar"), no = el("button", "descartar", "Descartar");
+  ok.type = no.type = "button";
+  const decidir = async acao => {
+    bloquear(true);
+    try {
+      const r = await api("/api/decidir", {acao});
+      const st = el("p", "status", acao === "confirmar"
+        ? "Confirmado e gravado na cópia de demonstração: " + r.resultado.join("; ")
+        : "Descartado. Nada foi gravado.");
+      acoes.replaceWith(st);
+    } catch (e) { balao("erro", "Não consegui falar com o agente. " + e.message); }
+    bloquear(false); rolar();
+  };
+  ok.onclick = () => decidir("confirmar"); no.onclick = () => decidir("descartar");
+  acoes.append(ok, no); c.append(acoes); conversa.append(c); rolar();
+}
+async function api(caminho, corpo){
+  const opcoes = corpo === undefined ? {} : {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(corpo)};
+  let r;
+  try { r = await fetch(caminho, opcoes); } catch (e) { throw new Error("servidor indisponível."); }
+  let j = {}; try { j = await r.json(); } catch (e) {}
+  if (!r.ok) throw new Error((j.erro || "erro " + r.status).slice(0, 200));
+  return j;
+}
+function mostrar(r){
+  if (r.evento) cartaoEvento(r.evento);
+  balao("agente", r.resposta, true);
+  if (r.ferramentas && r.ferramentas.length) {
+    const p = el("div", "pilulas");
+    r.ferramentas.forEach(f => p.append(el("span", "pilula", "ferramenta: " + f.nome + "(" + resumoArgs(f.args) + ")")));
+    conversa.append(p);
+  }
+  if (r.propostas && r.propostas.length) cartaoProposta(r.propostas);
+  rolar();
+}
+async function turno(caminho, corpo){
+  bloquear(true);
+  const d = el("div", "digitando", "O agente está consultando as ferramentas…");
+  conversa.append(d); rolar();
+  try { mostrar(await api(caminho, corpo)); }
+  catch (e) { balao("erro", "Não consegui falar com o agente. " + e.message); }
+  d.remove(); bloquear(false); campo.focus({preventScroll: true});
+}
+function enviar(texto){
+  texto = texto.trim(); if (!texto || ocupado) return;
+  campo.value = ""; balao("usuario", texto, false);
+  return turno("/api/mensagem", {texto});
+}
+async function iniciar(){
+  conversa.textContent = "";
+  try { await api("/api/reiniciar", {}); } catch (e) {}
+  return turno("/api/identificacao", {id: "ident_001"});
+}
+$("form").addEventListener("submit", e => { e.preventDefault(); enviar(campo.value); });
+$("reiniciar").onclick = () => { if (!ocupado) iniciar(); };
+SUGESTOES.forEach(([rotulo, tipo]) => {
+  const b = el("button", "chip", rotulo); b.type = "button";
+  b.onclick = () => { if (ocupado) return; tipo === "msg" ? enviar(rotulo) : turno("/api/identificacao", {id: tipo}); };
+  $("chips").append(b);
+});
+api("/api/estado").then(s => {
+  $("sub").textContent = "Protótipo · " + s.modelo + " · dados sintéticos";
+  if (!s.tem_chave) balao("erro", "Servidor sem GEMINI_API_KEY: defina a variável de ambiente e reinicie.");
+}).catch(() => {}).finally(iniciar);
+</script>
+</body>
+</html>
