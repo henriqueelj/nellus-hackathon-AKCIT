@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "1.0",
+  "animalId": "BR 105",
+  "score": 0.79,
+  "decisao": "review",
+  "modelVersion": "efficientnet_arcface_v1",
+  "timestamp": "2026-10-22T10:00:00",
+  "usuario": "operador-sintetico",
+  "segundoCandidato": "BR 109",
+  "scoreSegundo": 0.76,
+  "margem": 0.03
+}

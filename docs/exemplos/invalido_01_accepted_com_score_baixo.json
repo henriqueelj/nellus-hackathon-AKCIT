@@ -1,0 +1,7 @@
+{
+  "schemaVersion": "1.0",
+  "animalId": "BR 121",
+  "score": 0.60,
+  "decisao": "accepted",
+  "modelVersion": "efficientnet_arcface_v1"
+}

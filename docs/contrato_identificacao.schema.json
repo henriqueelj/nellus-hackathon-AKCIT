@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nellus.invalid/schemas/identificacao/1.0",
+  "title": "Evento de identificação visual (contrato PROPOSTO, v1.0)",
+  "description": "Contrato entre o app de identificação (on-device) e o agente. ATENÇÃO: o app Flutter hoje NÃO persiste nem emite este evento: o resultado do reconhecimento (decision, animal, score) existe só em memória. Este arquivo é uma PROPOSTA. Propriedades com x-origem = 'produzido-hoje-pelo-app' correspondem ao que o app já calcula; as com x-origem = 'proposto' NÃO existem no app hoje. Exemplos e dados deste repositório são SINTÉTICOS.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "animalId", "score", "decisao"],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0",
+      "description": "Versão deste contrato.",
+      "x-origem": "contrato"
+    },
+    "animalId": {
+      "type": ["string", "null"],
+      "minLength": 1,
+      "description": "Brinco do animal reconhecido (ex.: 'BR 121'). null quando decisao = rejected (o app descarta o animal nesse caso).",
+      "x-origem": "produzido-hoje-pelo-app"
+    },
+    "score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Compatibilidade visual (0 a 1) do melhor candidato.",
+      "x-origem": "produzido-hoje-pelo-app"
+    },
+    "decisao": {
+      "enum": ["accepted", "review", "rejected"],
+      "description": "accepted: score >= 0.85; review: 0.70 <= score < 0.85; rejected: score < 0.70. (O app tem também 'unavailable', que não é um resultado de identificação e fica fora do contrato.)",
+      "x-origem": "produzido-hoje-pelo-app"
+    },
+    "modelVersion": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Versão do modelo (ex.: 'efficientnet_arcface_v1'). No app ela fica no visualId do animal reconhecido, não no resultado da identificação; exigida quando há animalId.",
+      "x-origem": "produzido-hoje-pelo-app"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Momento da identificação.",
+      "x-origem": "proposto"
+    },
+    "usuario": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Quem fez a identificação.",
+      "x-origem": "proposto"
+    },
+    "segundoCandidato": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Brinco do segundo melhor candidato.",
+      "x-origem": "proposto"
+    },
+    "scoreSegundo": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Score do segundo candidato.",
+      "x-origem": "proposto"
+    },
+    "margem": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "score do primeiro menos scoreSegundo. Consistência numérica checada por scripts/validar_contrato.py (JSON Schema não calcula).",
+      "x-origem": "proposto"
+    }
+  },
+  "dependentRequired": {
+    "segundoCandidato": ["scoreSegundo"],
+    "scoreSegundo": ["segundoCandidato"],
+    "margem": ["scoreSegundo"]
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"decisao": {"const": "accepted"}}, "required": ["decisao"]},
+      "then": {"properties": {"score": {"minimum": 0.85}, "animalId": {"type": "string"}}}
+    },
+    {
+      "if": {"properties": {"decisao": {"const": "review"}}, "required": ["decisao"]},
+      "then": {"properties": {"score": {"minimum": 0.70, "exclusiveMaximum": 0.85}, "animalId": {"type": "string"}}}
+    },
+    {
+      "if": {"properties": {"decisao": {"const": "rejected"}}, "required": ["decisao"]},
+      "then": {"properties": {"score": {"exclusiveMaximum": 0.70}, "animalId": {"type": "null"}}}
+    },
+    {
+      "if": {"properties": {"animalId": {"type": "string"}}, "required": ["animalId"]},
+      "then": {"required": ["modelVersion"]}
+    }
+  ]
+}
