@@ -35,7 +35,19 @@ Regras:
 """
 
 
-def _chamadas_do_turno(resposta) -> list[tuple[str, dict]]:
+def criar_chat(chave: str, modelo: str | None = None):
+    """Cria o chat Gemini com as tools de FERRAMENTAS_LLM (sem aplicar_pendentes)."""
+    from google import genai
+    from google.genai import types
+
+    modelo = modelo or os.environ.get("GEMINI_MODEL", MODELO_PADRAO)
+    client = genai.Client(api_key=chave)
+    chat = client.chats.create(model=modelo, config=types.GenerateContentConfig(
+        system_instruction=PROMPT_SISTEMA, tools=tools.FERRAMENTAS_LLM, temperature=0.2))
+    return chat, modelo
+
+
+def chamadas_do_turno(resposta) -> list[tuple[str, dict]]:
     """Tools chamadas neste turno, lidas de automatic_function_calling_history
     (só o que vem depois da última mensagem de texto do usuário)."""
     hist = list(getattr(resposta, "automatic_function_calling_history", None) or [])
@@ -53,7 +65,7 @@ def _chamadas_do_turno(resposta) -> list[tuple[str, dict]]:
 
 def _enviar(chat, texto: str):
     resposta = chat.send_message(texto)
-    for nome, args in _chamadas_do_turno(resposta):
+    for nome, args in chamadas_do_turno(resposta):
         print(f"  [tool] {nome}({', '.join(f'{k}={v!r}' for k, v in args.items())})")
     print(f"\nAgente: {resposta.text or '(sem texto)'}\n")
     return resposta
@@ -95,13 +107,7 @@ def main():
     chave = os.environ.get("GEMINI_API_KEY")
     if not chave:
         sys.exit("Defina GEMINI_API_KEY no ambiente (a chave não é lida de arquivos).")
-    from google import genai
-    from google.genai import types
-
-    modelo = os.environ.get("GEMINI_MODEL", MODELO_PADRAO)
-    client = genai.Client(api_key=chave)
-    chat = client.chats.create(model=modelo, config=types.GenerateContentConfig(
-        system_instruction=PROMPT_SISTEMA, tools=tools.FERRAMENTAS_LLM, temperature=0.2))
+    chat, modelo = criar_chat(chave)
     print(f"Nellus | modelo {modelo} | DADOS SINTÉTICOS | identificações MOCK")
 
     try:
