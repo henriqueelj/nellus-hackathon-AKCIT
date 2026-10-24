@@ -28,6 +28,9 @@ Regras:
   com clareza; diga o que você consegue fazer.
 - Se a ferramenta indicar que algo não existe (animal, lote, identificação), avise o usuário e
   não proponha nenhuma ação.
+- Para "plano de ação", "o que priorizar" ou auditoria, chame auditoria_priorizada. A ordem e a
+  severidade dos itens são calculadas pela ferramenta: explique e converse sobre o plano, mas NÃO
+  reordene, NÃO reclassifique e NÃO invente itens. Apresente os itens na ordem recebida.
 - Animal com decisão 'rejected' não é reconhecido: não diga quem ele é.
 """
 

@@ -228,6 +228,73 @@ def auditar_cadastro(dados) -> dict:
             "lotes_sem_area": [l["name"] for l in dados.get("lots", []) if not l.get("hectares")]}
 
 
+SEVERIDADES = ("CRITICA", "ALTA", "MEDIA", "BAIXA")
+
+
+def _dias_desde_cadastro(dados: dict, animal_id: str) -> int:
+    reg = _eventos(dados, animal_id, "registration")
+    return (_hoje() - _data(reg[0]["date"])).days if reg else 0
+
+
+@_com_dados
+def auditoria_priorizada(dados, lote: str = "") -> dict:
+    """Plano de auditoria PRIORIZADO por regras fixas (a ordem é calculada em código).
+    Severidades: CRITICA (aftosa nunca aplicada ou vencida), ALTA (sem ID visual),
+    MEDIA (lote sem área em hectares), BAIXA (SISBOV vazio, agrupado). Lote opcional."""
+    if lote and not _achar_lotes(dados, lote):
+        return _erro(f"Lote '{lote}' não encontrado. Lotes existentes: "
+                     f"{[l['name'] for l in dados.get('lots', [])]}")
+    animais = sorted(_ativos(dados, lote), key=lambda a: a["id"])
+    nomes_lotes = set(_achar_lotes(dados, lote)) if lote else None
+    achados = []
+
+    def item(sev, alvo, descricao, evidencia, acao, atraso):
+        achados.append({"severidade": sev, "alvo": alvo, "descricao": descricao,
+                        "evidencia": evidencia, "acao_sugerida": acao, "dias_atraso": atraso})
+
+    for a in animais:
+        sv = _situacao_vacina(dados, a["id"], "Aftosa", DIAS_VALIDADE_AFTOSA)
+        if sv["situacao"] == "nunca_vacinado":
+            dias = _dias_desde_cadastro(dados, a["id"])
+            item("CRITICA", a["id"], "Aftosa nunca aplicada",
+                 {"vacinas_aftosa_registradas": 0, "dias_desde_cadastro": dias,
+                  "lote": a["lot"]},
+                 "Vacinar contra aftosa e registrar o manejo.", dias)
+        elif sv["situacao"] == "vencida":
+            item("CRITICA", a["id"], "Aftosa vencida",
+                 {"ultima_aplicacao": sv["ultima_aplicacao"],
+                  "dias_desde_aplicacao": sv["dias_desde_aplicacao"],
+                  "validade_dias": DIAS_VALIDADE_AFTOSA, "lote": a["lot"]},
+                 "Revacinar contra aftosa e registrar o manejo.", sv["dias_vencida"])
+    for a in animais:
+        if not _tem_id_visual(a):
+            item("ALTA", a["id"], "Animal ativo sem identificação visual (o app não consegue "
+                 "reconhecê-lo)", {"visualId": None, "lote": a["lot"]},
+                 "Fazer o cadastro das 3 fotos (frente, direita, esquerda) no app.",
+                 _dias_desde_cadastro(dados, a["id"]))
+    for l in dados.get("lots", []):
+        if (nomes_lotes is None or l["name"] in nomes_lotes) and not l.get("hectares"):
+            item("MEDIA", l["name"], "Lote sem área em hectares (impede o cálculo de lotação "
+                 "UA/ha)", {"hectares": l.get("hectares", 0)},
+                 "Informar a área do lote em hectares.", 0)
+    sem_sisbov = [a["id"] for a in animais if not a.get("sisbov")]
+    if sem_sisbov:
+        item("BAIXA", lote and sorted(nomes_lotes)[0] or "todos os lotes",
+             "SISBOV vazio", {"animais_afetados": len(sem_sisbov),
+                              "exemplos": sem_sisbov[:5]},
+             "Preencher o SISBOV dos animais.", 0)
+
+    achados.sort(key=lambda x: (SEVERIDADES.index(x["severidade"]), -x["dias_atraso"], x["alvo"]))
+    for n, x in enumerate(achados, 1):
+        x["id"] = f"ACH-{n:03d}"
+    return {"ok": True, "data_referencia": _hoje().isoformat(), "lote": lote or "todos",
+            "ordem": "severidade (CRITICA>ALTA>MEDIA>BAIXA), depois mais dias de atraso",
+            "total": len(achados),
+            "por_severidade": {s: sum(1 for x in achados if x["severidade"] == s)
+                               for s in SEVERIDADES},
+            "itens": [{"id": x.pop("id"), **x} for x in achados]}
+
+
 @_com_dados
 def identificacoes_recentes(dados) -> dict:
     """Lista identificações recentes (MOCK: o app real não registra histórico)."""
@@ -431,5 +498,5 @@ def aplicar_pendentes() -> dict:
 
 # Única lista entregue ao LLM. aplicar_pendentes/listar_pendentes/descartar_pendentes ficam de fora.
 FERRAMENTAS_LLM = [buscar_animais, historico_animal, animais_sem_vacina, ganho_peso_lote,
-                   auditar_cadastro, identificacoes_recentes, processar_identificacao,
-                   gerar_dossie, propor_manejo, propor_tarefa]
+                   auditar_cadastro, auditoria_priorizada, identificacoes_recentes,
+                   processar_identificacao, gerar_dossie, propor_manejo, propor_tarefa]
